@@ -19,6 +19,9 @@
         button {
             color: black;
         }
+        input {
+            color: black;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +37,12 @@
     <hr>
     <button onclick="useBsky()" id="bskybutton">Use bsky.app's client</button>
     <button onclick="useDeer()" id="deerbutton" disabled>Use deer.social's client</button>
+    <button onclick="useCustom()" id="custombutton">Use custom client</button>
+    <form style="display: none;" id="formreal" onsubmit="setCustom(); return false;">
+        <label for="customurl">Custom URL (include https://, supports any proto[? not tested]):</label>
+        <input name="customurl" id="customurl" type="text">
+        <input type="submit">
+    </form>
     <br><br>
     <a href="https://deer.social/profile/did:plc:foxemuxgrwgjfj4v75tjeynd" title="Wish" id="wish">wish.freakybob.site</a>
     <br><br>
@@ -53,6 +62,7 @@
         const food = document.getElementById('food');
         const noma = document.getElementById('noma');
         const blog = document.getElementById('blog');
+        const formreal = document.getElementById('formreal');
         // end IDs
         function useBsky() {
             bskybutton.disabled = true;
@@ -71,6 +81,18 @@
             food.href = "https://deer.social/profile/did:plc:6d5aevtmhelkk2kut4t4wydm";
             noma.href = "https://deer.social/profile/did:plc:yguc4cxtz2xq3i5w2jgvrdwb";
             blog.href = "https://deer.social/profile/did:plc:ydpban262rl7eigtsr3z44s6";
+        }
+        function useCustom() {
+            formreal.style.display = "block";
+        }
+        function setCustom() {
+            clienturl = document.getElementById('customurl').value
+            wish.href = clienturl + "/profile/did:plc:foxemuxgrwgjfj4v75tjeynd";
+            team.href = clienturl + "/profile/did:plc:z4ekrgwajxgdqgs6ultkipex";
+            food.href = clienturl + "/profile/did:plc:6d5aevtmhelkk2kut4t4wydm";
+            noma.href = clienturl + "/profile/did:plc:yguc4cxtz2xq3i5w2jgvrdwb";
+            blog.href = clienturl + "/profile/did:plc:ydpban262rl7eigtsr3z44s6";
+            formreal.style.display = "none";
         }
     </script>
 </body>
