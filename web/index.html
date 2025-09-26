@@ -32,7 +32,7 @@
     <p>A list of Bluesky/ATProto users who use *.freakybob.site as their username. (links use DID:PLC URL)</p>
     <p>(you can hover over a person to see who they are!)</p>
     <hr>
-    <button onclick="useBsky()" disabled>Use bsky.app's client (SOON)</button>
+    <button onclick="useBsky()" id="bskybutton">Use bsky.app's client</button>
     <br><br>
     <a href="https://deer.social/profile/did:plc:foxemuxgrwgjfj4v75tjeynd" title="Wish" id="wish">wish.freakybob.site</a>
     <br><br>
@@ -45,7 +45,20 @@
     <a href="https://deer.social/profile/did:plc:ydpban262rl7eigtsr3z44s6" title="Freakybob Team's Blog account (old)" id="blog">blog.freakybob.site</a>
     <script>
         function useBsky() {
-            console.error("Coming soon (guess what guys i already have the ids set up)")
+            // begin IDs
+            const bskybutton = document.getElementById('bskybutton')
+            const wish = document.getElementById('wish')
+            const team = document.getElementById('team')
+            const food = document.getElementById('food')
+            const noma = document.getElementById('noma')
+            const blog = document.getElementById('blog')
+            // end IDs
+            bskybutton.disabled = true
+            wish.href = "https://bsky.app/profile/did:plc:foxemuxgrwgjfj4v75tjeynd"
+            team.href = "https://bsky.app/profile/did:plc:z4ekrgwajxgdqgs6ultkipex"
+            food.href = "https://bsky.app/profile/did:plc:6d5aevtmhelkk2kut4t4wydm"
+            noma.href = "https://bsky.app/profile/did:plc:yguc4cxtz2xq3i5w2jgvrdwb"
+            blog.href = "https://bsky.app/profile/did:plc:ydpban262rl7eigtsr3z44s6"
         }
     </script>
 </body>
