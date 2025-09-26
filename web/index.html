@@ -45,21 +45,32 @@
     <br><br>
     <a href="https://deer.social/profile/did:plc:ydpban262rl7eigtsr3z44s6" title="Freakybob Team's Blog account (old)" id="blog">blog.freakybob.site</a>
     <script>
+        // begin IDs
+        const bskybutton = document.getElementById('bskybutton');
+        const deerbutton = document.getElementById('deerbutton')
+        const wish = document.getElementById('wish');
+        const team = document.getElementById('team');
+        const food = document.getElementById('food');
+        const noma = document.getElementById('noma');
+        const blog = document.getElementById('blog');
+        // end IDs
         function useBsky() {
-            // begin IDs
-            const bskybutton = document.getElementById('bskybutton');
-            const wish = document.getElementById('wish');
-            const team = document.getElementById('team');
-            const food = document.getElementById('food');
-            const noma = document.getElementById('noma');
-            const blog = document.getElementById('blog');
-            // end IDs
             bskybutton.disabled = true;
+            deerbutton.disabled = false;
             wish.href = "https://bsky.app/profile/did:plc:foxemuxgrwgjfj4v75tjeynd";
             team.href = "https://bsky.app/profile/did:plc:z4ekrgwajxgdqgs6ultkipex";
             food.href = "https://bsky.app/profile/did:plc:6d5aevtmhelkk2kut4t4wydm";
             noma.href = "https://bsky.app/profile/did:plc:yguc4cxtz2xq3i5w2jgvrdwb";
             blog.href = "https://bsky.app/profile/did:plc:ydpban262rl7eigtsr3z44s6";
+        }
+        function useDeer() {
+            deerbutton.disabled = true;
+            bskybutton.disabled = false;
+            wish.href = "https://deer.social/profile/did:plc:foxemuxgrwgjfj4v75tjeynd";
+            team.href = "https://deer.social/profile/did:plc:z4ekrgwajxgdqgs6ultkipex";
+            food.href = "https://deer.social/profile/did:plc:6d5aevtmhelkk2kut4t4wydm";
+            noma.href = "https://deer.social/profile/did:plc:yguc4cxtz2xq3i5w2jgvrdwb";
+            blog.href = "https://deer.social/profile/did:plc:ydpban262rl7eigtsr3z44s6";
         }
     </script>
 </body>
