@@ -38,6 +38,7 @@
     <button onclick="useBsky()" id="bskybutton">Use bsky.app's client</button>
     <button onclick="useDeer()" id="deerbutton" disabled>Use deer.social's client</button>
     <button onclick="useCustom()" id="custombutton">Use custom client</button>
+    <button onclick="useAt()" id="atbutton">Use at:// URL (only on supported browsers)</button>
     <form style="display: none;" id="formreal" onsubmit="setCustom(); return false;">
         <label for="customurl">Custom URL (include https://, supports any proto[? not tested]):</label>
         <input name="customurl" id="customurl" type="text">
@@ -57,6 +58,7 @@
         // begin IDs
         const bskybutton = document.getElementById('bskybutton');
         const deerbutton = document.getElementById('deerbutton')
+        const atbutton = document.getElementById('atbutton')
         const wish = document.getElementById('wish');
         const team = document.getElementById('team');
         const food = document.getElementById('food');
@@ -96,6 +98,17 @@
             food.href = clienturl + "/profile/did:plc:6d5aevtmhelkk2kut4t4wydm";
             noma.href = clienturl + "/profile/did:plc:yguc4cxtz2xq3i5w2jgvrdwb";
             blog.href = clienturl + "/profile/did:plc:ydpban262rl7eigtsr3z44s6";
+            formreal.style.display = "none";
+        }
+        function useAt() {
+            deerbutton.disabled = false;
+            bskybutton.disabled = false;
+            atbutton.disabled = true;
+            wish.href = "at://did:plc:foxemuxgrwgjfj4v75tjeynd";
+            team.href = "at://did:plc:z4ekrgwajxgdqgs6ultkipex";
+            food.href = "at://did:plc:6d5aevtmhelkk2kut4t4wydm";
+            noma.href = "at://did:plc:yguc4cxtz2xq3i5w2jgvrdwb";
+            blog.href = "at://did:plc:ydpban262rl7eigtsr3z44s6";
             formreal.style.display = "none";
         }
     </script>
