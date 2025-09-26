@@ -69,6 +69,7 @@
         function useBsky() {
             bskybutton.disabled = true;
             deerbutton.disabled = false;
+            atbutton.disabled = false;
             wish.href = "https://bsky.app/profile/did:plc:foxemuxgrwgjfj4v75tjeynd";
             team.href = "https://bsky.app/profile/did:plc:z4ekrgwajxgdqgs6ultkipex";
             food.href = "https://bsky.app/profile/did:plc:6d5aevtmhelkk2kut4t4wydm";
@@ -79,6 +80,7 @@
         function useDeer() {
             deerbutton.disabled = true;
             bskybutton.disabled = false;
+            atbutton.disabled = false;
             wish.href = "https://deer.social/profile/did:plc:foxemuxgrwgjfj4v75tjeynd";
             team.href = "https://deer.social/profile/did:plc:z4ekrgwajxgdqgs6ultkipex";
             food.href = "https://deer.social/profile/did:plc:6d5aevtmhelkk2kut4t4wydm";
@@ -92,6 +94,7 @@
         function setCustom() {
             bskybutton.disabled = false
             deerbutton.disabled = false
+            atbutton.disabled = false;
             clienturl = document.getElementById('customurl').value
             wish.href = clienturl + "/profile/did:plc:foxemuxgrwgjfj4v75tjeynd";
             team.href = clienturl + "/profile/did:plc:z4ekrgwajxgdqgs6ultkipex";
